@@ -1,0 +1,38 @@
+@import 'tailwindcss';
+
+:root {
+  --kv-black: #0b1215;
+  --kv-white: #fcfcfc;
+
+  --portfolio-primary: #333;
+  --portfolio-secondary: #afaeae;
+  --portfolio-accent: #f90;
+}
+
+@theme {
+  --color-kv-black: #0b1215;
+  --color-kv-white: #fcfcfc;
+
+  --color-portfolio-primary: var(--portfolio-primary);
+  --color-portfolio-secondary: var(--portfolio-secondary);
+  --color-portfolio-accent: var(--portfolio-accent);
+}
+
+body {
+  min-height: 100svh;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1.2rem;
+}
+h4 {
+  font-size: 1rem;
+}

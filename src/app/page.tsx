@@ -12,20 +12,15 @@ export default function Home() {
     >
       <Hero />
       <div>
-        <section>
-          <h2>What I Do</h2>
-          <ul>
-            <li>Build accessible web apps</li>
-          </ul>
-        </section>
-        <section>
+        <section className='max-w-3/4 mx-auto'>
           <h2>Featured Projects</h2>
           <p>Some of my recent work.</p>
         </section>
-        <section>
-          <h2>Education</h2>
+        <section className='max-w-3/4 mx-auto'>
+          <h2>Accessibility is not optional</h2>
+          <p>I focus on building inclusive web experiences.</p>
         </section>
-        <section>
+        <section className='max-w-3/4 mx-auto'>
           <h2>Let&apos;s Talk</h2>
           <InternalLinkButton Path='/contact' Text='Contact' />
         </section>

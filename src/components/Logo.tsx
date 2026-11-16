@@ -11,7 +11,7 @@ export function Logo({ className }: LogoProps) {
     <Link
       href='/'
       className={`
-        group flex items-center mr-2 hover:text-portfolio-accent
+        group flex items-center hover:text-portfolio-accent
         ${className}
       `}
     >

@@ -51,7 +51,7 @@ export function Footer() {
               <a href={link.link} className='flex items-center gap-1'>
                 {link.label}
                 <link.icon
-                  className='order-first mt-1'
+                  className='order-first mt-0.5'
                   aria-hidden='true'
                 />
               </a>

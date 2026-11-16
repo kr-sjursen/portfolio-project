@@ -14,6 +14,10 @@ export default function Contact() {
       className='mx-auto w-3/4'
     >
       <h1>Contact</h1>
+      <p>Email</p>
+      <p>GitHub</p>
+      <p>LinkedIn</p>
+      <p>Call to action</p>
     </main>
   );
 }

@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { BsCaretDownFill } from "react-icons/bs";
 
-// TODO: When select is closed, show the disabled option to return it to looking like a button that says "Theme". Find out if this is reasonable with regards to accessibility first.
 // TODO: Ensure that no flash of default theme occurs on load
 // TODO: Add a theme that is purely HTML, no CSS.
 export function ThemeSelect() {
@@ -26,13 +26,14 @@ export function ThemeSelect() {
     <div>
       <button
         id='themeSelect'
-        className='relative w-full hover:underline hover:decoration-portfolio-accent'
+        className='relative group w-full hover:underline hover:decoration-portfolio-accent'
         type='button'
         aria-expanded={menuOpen}
         aria-controls='theme-menu'
         onClick={() => setMenuOpen(!menuOpen)}
       >
         Theme
+        <BsCaretDownFill className='inline ml-1.5 group-hover:text-portfolio-accent' />
       </button>
       <ul
         id='theme-menu'

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { BsArrowUpRight } from 'react-icons/bs';
+import { BsBoxArrowUpRight } from 'react-icons/bs';
 
 interface ButtonProps {
   Path: string;
@@ -10,7 +10,8 @@ interface ButtonProps {
 
 export function InternalLinkButton({ Path, Text, Icon, Style }: ButtonProps) {
   return (
-    <Link href={Path}
+    <Link
+      href={Path}
       className={`
         flex items-baseline justify-center 
         bg-portfolio-primary px-4 py-2 rounded-xl
@@ -29,10 +30,13 @@ export function InternalLinkButton({ Path, Text, Icon, Style }: ButtonProps) {
 
 export function ExternalLinkButton({ Path, Text, Icon, Style }: ButtonProps) {
   return (
-    <a href={Path}
+    <a
+      href={Path}
+      target='_blank'
+      rel='noopener noreferrer'
       className={`
         flex items-baseline justify-center 
-        bg-portfolio-primary px-4 py-2 rounded-xl
+        bg-portfolio-primary px-4 py-2 pl-6 rounded-xl
         hover:bg-portfolio-accent hover:text-black
         text-white shadow-md shadow-portfolio-primary/25
         ${Style}
@@ -42,7 +46,10 @@ export function ExternalLinkButton({ Path, Text, Icon, Style }: ButtonProps) {
       <span aria-hidden='true'>
         {Icon}
       </span>
-      <BsArrowUpRight aria-hidden='true' />
+      <BsBoxArrowUpRight
+        className='ml-1 h-[50%] self-start'
+        aria-hidden='true'
+      />
     </a>
   )
 }

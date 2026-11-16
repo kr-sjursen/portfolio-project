@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 
 // TODO: When select is closed, show the disabled option to return it to looking like a button that says "Theme". Find out if this is reasonable with regards to accessibility first.
 // TODO: Ensure that no flash of default theme occurs on load
+// TODO: Add a theme that is purely HTML, no CSS.
 export function ThemeSelect() {
   const themes = [
     'default',

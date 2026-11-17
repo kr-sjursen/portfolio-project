@@ -1,5 +1,18 @@
 import { InternalLinkButton } from '@/components/buttons/LinkButtons';
+import { LayoutCard } from '@/components/cards/LayoutCard';
 import { Hero } from '@/components/feature/landing/Hero';
+import { ProjectShowcase } from '@/components/feature/landing/ProjectShowcase';
+
+const landingContent = {
+  accessibility: {
+    Title: 'Accessibility is not optional',
+    Content: 'I focus on building inclusive web experiences.'
+  },
+  contact: {
+    Title: "Let's Talk",
+    Content: 'Contact me.'
+  }
+}
 
 export default function Home() {
   // TODO: Add a concise intro: who i am, what i build, and what i am looking for.
@@ -11,20 +24,9 @@ export default function Home() {
       className='relative mx-auto w-full'
     >
       <Hero />
-      <div>
-        <section className='max-w-3/4 mx-auto'>
-          <h2>Featured Projects</h2>
-          <p>Some of my recent work.</p>
-        </section>
-        <section className='max-w-3/4 mx-auto'>
-          <h2>Accessibility is not optional</h2>
-          <p>I focus on building inclusive web experiences.</p>
-        </section>
-        <section className='max-w-3/4 mx-auto'>
-          <h2>Let&apos;s Talk</h2>
-          <InternalLinkButton Path='/contact' Text='Contact' />
-        </section>
-      </div>
+      <ProjectShowcase />
+      <LayoutCard {...landingContent.accessibility} />
+      <LayoutCard {...landingContent.contact} />
     </main>
   );
 }

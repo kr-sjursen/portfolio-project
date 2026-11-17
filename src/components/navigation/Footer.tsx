@@ -1,8 +1,7 @@
-import Link from 'next/link';
-import { Logo } from '../Logo';
-import { FaGithub } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { FaEnvelope } from "react-icons/fa";
+import { Logo } from '@/components/Logo';
+import { FaGithub } from 'react-icons/fa';
+import { FaLinkedin } from 'react-icons/fa';
+import { FaEnvelope } from 'react-icons/fa';
 
 const repoLink = 'https://github.com/kr-sjursen';
 const version = '0.1.0';
@@ -26,7 +25,6 @@ const contactLinks = [
 ];
 
 // TODO: Add legal links if needed.
-// TODO: Add social media links and contact information.
 // TODO: Add version controller so I can update the version easily without thinking about it.
 export function Footer() {
   return (

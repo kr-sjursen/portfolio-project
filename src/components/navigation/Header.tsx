@@ -24,15 +24,16 @@ export function Header() {
 
   return (
     <header className='
-      flex flex-row relative w-full top-0 p-2 py-3 mb-2 bg-portfolio-primary
-      text-kv-white text-lg px-4 pr-8 shadow-md shadow-portfolio-primary/20
+      flex flex-row w-full top-0 p-2 py-3 mb-2 bg-portfolio-primary
+      text-kv-white text-lg px-4 pr-8 shadow-md shadow-portfolio-primary/50
+      sticky z-98
     '>
       <Link
         href='#main'
         className='
-          absolute left-0 top-0 bg-jobloop-primary-green py-2 px-4 z-50
+          absolute left-0 top-0 bg-portfolio-accent py-2 px-4 z-99
           transform -translate-y-full focus:translate-y-0 transition
-          focus:bg-black focus:text-white
+          focus:bg-portfolio-accent focus:text-kv-black
         '
       >
         Skip to content

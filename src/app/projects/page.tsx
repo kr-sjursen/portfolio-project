@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Projects'
@@ -12,7 +12,7 @@ export default function Projects() {
   return (
     <main
       id='main'
-      className='mx-auto w-3/4'
+      className='mx-auto max-w-3/4'
     >
       <h1>Projects</h1>
     </main>

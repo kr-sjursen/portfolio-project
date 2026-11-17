@@ -3,6 +3,7 @@ import { BsBoxArrowUpRight } from 'react-icons/bs';
 
 interface ButtonProps {
   Path: string;
+  Target?: string;
   Text?: string;
   Icon?: React.ReactNode; // TODO: Use IconType instead.
   Style?: string;
@@ -51,5 +52,29 @@ export function ExternalLinkButton({ Path, Text, Icon, Style }: ButtonProps) {
         aria-hidden='true'
       />
     </a>
+  )
+}
+
+export function CTAButton({ Path, Text, Icon, Style, Target }: ButtonProps) {
+  return (
+    <Link
+      href={Path}
+      className={`
+        flex items-center justify-center gap-1
+        bg-portfolio-accent px-4 py-2 rounded-xl
+        text-kv-black
+        shadow-md shadow-portfolio-primary/25
+        hover:bg-portfolio-secondary
+        ${Style}
+      `}
+    >
+      {Text}
+      <span
+        className='order-first mb-0.5'
+        aria-hidden='true'
+      >
+        {Icon}
+      </span>
+    </Link>
   )
 }

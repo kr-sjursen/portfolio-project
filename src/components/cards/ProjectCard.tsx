@@ -1,14 +1,39 @@
-export function ProjectCard() {
+import { InternalLinkButton } from '@/components/buttons/LinkButtons'
+
+interface ProjectCardProps {
+  Title: string;
+  Tech?: string[];
+  Desc?: string;
+  Link?: string;
+  CaseLink?: string;
+}
+
+export function ProjectCard({
+  Title, Tech, Desc, Link, CaseLink
+}: ProjectCardProps) {
+  const id = Title.toLowerCase().replace(/\s+/g, '-');
   return (
-    <section>
-      <h3>Project Title</h3>
+    <section
+      aria-labelledby={id}
+      className='flex flex-col gap-2 w-full'
+    >
+      <h3 id={id}>{Title}</h3>
       <ul>
-        <li>Technologies used</li>
-        <li>Another tech</li>
+        {Tech?.map(t =>
+          <li key={t}>
+            {t}
+          </li>
+        )}
       </ul>
-      <p>Short description</p>
-      <a href="#">View project</a>
-      <a href="#">Case study</a>
+      <p>{Desc}</p>
+      {Link && <InternalLinkButton 
+        Text='View project'
+        Path={Link}
+      />}
+      {CaseLink && <InternalLinkButton 
+        Text='Case study'
+        Path={CaseLink}
+      />}
     </section>
   )
 }

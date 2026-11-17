@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { BsArchiveFill } from "react-icons/bs";
+import { BsArchiveFill } from 'react-icons/bs';
 
 interface LogoProps {
   className?: string;

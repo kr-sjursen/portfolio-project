@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { BsCaretDownFill } from "react-icons/bs";
+import { BsCaretDownFill } from 'react-icons/bs';
 
 // TODO: Ensure that no flash of default theme occurs on load
 // TODO: Add a theme that is purely HTML, no CSS.

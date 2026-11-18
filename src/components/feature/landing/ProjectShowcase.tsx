@@ -14,7 +14,7 @@ export function ProjectShowcase() {
       <p>Some of my recent work.</p>
       <ul className='
         flex flex-row gap-4
-        *:not-first:border-l *:not-first:pl-8
+        *:not-first:border-l
       '>
         <li className='w-full'>
           <ProjectCard

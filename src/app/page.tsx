@@ -1,7 +1,11 @@
-import { InternalLinkButton } from '@/components/buttons/LinkButtons';
-import { LayoutCard } from '@/components/cards/LayoutCard';
+// import { InternalLinkButton } from '@/components/buttons/LinkButtons';
+// import { LayoutCard } from '@/components/cards/LayoutCard';
 import { Hero } from '@/components/feature/landing/Hero';
-import { ProjectShowcase } from '@/components/feature/landing/ProjectShowcase';
+// import { ProjectShowcase } from '@/components/feature/landing/ProjectShowcase';
+import { FeaturedProjects } from '@/components/feature/landing/FeaturedProjects';
+import { About } from '@/components/feature/landing/About';
+import { Accessibility } from '@/components/feature/landing/Accessibility';
+import { ContactCTA } from '@/components/feature/landing/ContactCTA';
 
 const landingContent = {
   accessibility: {
@@ -21,12 +25,16 @@ export default function Home() {
   return (
     <main
       id='main'
-      className='relative mx-auto w-full'
+      className='relative mx-auto w-full max-w-[98%]'
     >
       <Hero />
-      <ProjectShowcase />
+      <About />
+      <Accessibility />
+      <FeaturedProjects />
+      <ContactCTA />
+      {/*<ProjectShowcase />
       <LayoutCard {...landingContent.accessibility} />
-      <LayoutCard {...landingContent.contact} />
+      <LayoutCard {...landingContent.contact} />*/}
     </main>
   );
 }

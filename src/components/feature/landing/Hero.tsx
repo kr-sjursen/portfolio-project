@@ -1,11 +1,12 @@
 import { CTAButton } from '@/components/buttons/LinkButtons'
 import { FaGithub } from 'react-icons/fa';
+import { LuMapPin } from 'react-icons/lu';
 
 export function Hero() {
   return (
   <section
     className='
-      flex flex-col gap-2 max-w-[98%] mx-auto
+      flex flex-col gap-2 mx-auto
       px-8 py-12 mb-8
       bg-portfolio-primary rounded-xl 
       text-kv-white
@@ -21,9 +22,15 @@ export function Hero() {
       <span aria-hidden='true'>·</span>
       <span>Accessibility-focused</span>
     </div>
-    <div className='mb-4'>
+    <div className='flex flex-col gap-4 mb-4'>
       <p>I&apos;m a web developer specializing in responsive, accessible interfaces, with experience in React, Next.js, JavaScript, and PHP.</p>
-      <p>Based in Bergen, Norway</p>
+      <p>
+        <LuMapPin
+          className='inline mr-1'
+          aria-hidden='true'
+        />
+        Based in Bergen, Norway
+      </p>
     </div>
     <div className='flex flex-row gap-4'>
       <CTAButton

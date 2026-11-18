@@ -9,15 +9,19 @@ export function Header() {
       label: 'My Portfolio',
     },
     {
-      href: '/about',
+      href: '#about',
       label: 'About',
     },
     {
-      href: '/projects',
+      href: '#accessibility',
+      label: 'Accessibility',
+    },
+    {
+      href: '#projects',
       label: 'Projects',
     },
     {
-      href: '/contact',
+      href: '#contact',
       label: 'Contact',
     }
   ];

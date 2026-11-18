@@ -34,6 +34,7 @@ export const metadata: Metadata = {
 import { Header } from '@/components/navigation/Header';
 import { Footer } from '@/components/navigation/Footer';
 
+// TODO: Add a "scroll to top" button
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html

@@ -7,6 +7,7 @@
   --portfolio-primary: #333;
   --portfolio-secondary: #afaeae;
   --portfolio-accent: #f90;
+  --portfolio-accent-dark: #dd7e12;
 }
 
 @theme {
@@ -16,6 +17,7 @@
   --color-portfolio-primary: var(--portfolio-primary);
   --color-portfolio-secondary: var(--portfolio-secondary);
   --color-portfolio-accent: var(--portfolio-accent);
+  --color-portfolio-accent-dark: var(--portfolio-accent-dark);
 }
 
 body {

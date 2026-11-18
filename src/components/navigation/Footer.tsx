@@ -2,6 +2,7 @@ import { Logo } from '@/components/Logo';
 import { FaGithub } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa';
 import { FaEnvelope } from 'react-icons/fa';
+import { LuMapPin } from 'react-icons/lu';
 
 const repoLink = 'https://github.com/kr-sjursen';
 const version = '0.1.0';
@@ -19,13 +20,14 @@ const contactLinks = [
   },
   { // TODO: Set up an email for contact.
     label: 'Email',
-    link: 'mailto:example@example.com',
+    link: 'mailto:kr.sjursen@gmail.com',
     icon: FaEnvelope
   }
 ];
 
 // TODO: Add legal links if needed.
 // TODO: Add version controller so I can update the version easily without thinking about it.
+// TODO: Add a report issues link to the GitHub repo.
 export function Footer() {
   return (
     <footer className='
@@ -38,7 +40,14 @@ export function Footer() {
         <div className='flex flex-col grow gap-1'>
           <h2>Kristian Sjursen</h2>
           <Logo />
-          <p>Web developer, based in Norway</p>
+          <p>Web developer</p>
+          <p>
+            <LuMapPin
+              className='inline mr-1'
+              aria-hidden='true'
+            />
+            Bergen, Norway
+          </p>
         </div>
         <ul className='flex flex-col gap-1'>
           {contactLinks.map(link => (
@@ -49,7 +58,7 @@ export function Footer() {
               <a href={link.link} className='flex items-center gap-1'>
                 {link.label}
                 <link.icon
-                  className='order-first mt-0.5'
+                  className='order-first'
                   aria-hidden='true'
                 />
               </a>

@@ -5,19 +5,27 @@ import { LuMapPin } from 'react-icons/lu';
 export function Hero() {
   return (
   <section
+    id='hero'
     className='
       flex flex-col gap-2 mx-auto
-      px-8 py-12 mb-8
-      bg-portfolio-primary rounded-xl 
-      text-kv-white
+      px-8 py-12 mt-2 mb-8
+      bg-portfolio-primary rounded-lg
+      border border-portfolio-tertiary
       shadow-md shadow-portfolio-primary/25
     '
-    aria-labelledby='hero'
+    aria-labelledby='hero-title'
   >
-    <h1 id='hero'>
+    <h1
+      id='hero-title'
+      className='text-3xl'
+    >
       Hello, I&apos;m <span className='font-bold'>Kristian Sjursen</span>
     </h1>
-    <div className='flex gap-2 order-first text-sm'>
+    <div className='
+      flex gap-2 order-first text-sm hover:cursor-default
+      *:not-aria-hidden:hover:underline *:hover:decoration-portfolio-accent
+      *:hover:underline-offset-2
+    '>
       <span>Web developer</span>
       <span aria-hidden='true'>·</span>
       <span>Accessibility-focused</span>
@@ -29,7 +37,7 @@ export function Hero() {
           className='inline mr-1'
           aria-hidden='true'
         />
-        Based in Bergen, Norway
+        Based in Bergen, Norway &#x1F1F3;&#x1F1F4;
       </p>
     </div>
     <div className='flex flex-row gap-4'>

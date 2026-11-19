@@ -6,12 +6,19 @@ export function ContactCTA() {
     <section
       id='contact'
       className='
-        flex flex-col gap-2
-        mb-8 px-8
+        flex flex-col gap-2 max-w-300
+        mx-auto mb-8 px-8 py-6
+        bg-portfolio-primary rounded-lg
+        border border-portfolio-tertiary
       '
       aria-labelledby='contact-title'
     >
-      <h2 id='contact-title'>Let&apos;s Talk</h2>
+      <h2
+        id='contact-title'
+        className='text-3xl'
+      >
+        Let&apos;s Talk!
+      </h2>
       <p>
         I&apos;m always looking to connect and help make the web more
         accessible, one website at a time. 

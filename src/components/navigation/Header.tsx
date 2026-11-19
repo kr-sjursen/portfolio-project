@@ -30,7 +30,7 @@ export function Header() {
     <header className='
       flex flex-row w-full top-0 p-2 py-3 mb-2 bg-portfolio-primary
       text-kv-white text-lg px-4 pr-8 shadow-md shadow-portfolio-primary/50
-      sticky z-98
+      sticky z-98 border-b border-portfolio-tertiary
     '>
       <Link
         href='#main'

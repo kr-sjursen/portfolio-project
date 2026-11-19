@@ -5,7 +5,9 @@
   --kv-white: #fcfcfc;
 
   --portfolio-primary: #333;
-  --portfolio-secondary: #afaeae;
+  /*--portfolio-secondary: #afaeae;*/
+  --portfolio-secondary: #1d1d1d;
+  --portfolio-tertiary: #555;
   --portfolio-accent: #f90;
   --portfolio-accent-dark: #dd7e12;
 }
@@ -16,6 +18,7 @@
 
   --color-portfolio-primary: var(--portfolio-primary);
   --color-portfolio-secondary: var(--portfolio-secondary);
+  --color-portfolio-tertiary: var(--portfolio-tertiary);
   --color-portfolio-accent: var(--portfolio-accent);
   --color-portfolio-accent-dark: var(--portfolio-accent-dark);
 }
@@ -24,17 +27,4 @@ body {
   min-height: 100svh;
   display: flex;
   flex-flow: column nowrap;
-}
-
-h1 {
-  font-size: 2rem;
-}
-h2 {
-  font-size: 1.5rem;
-}
-h3 {
-  font-size: 1.2rem;
-}
-h4 {
-  font-size: 1rem;
 }

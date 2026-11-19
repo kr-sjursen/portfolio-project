@@ -48,7 +48,7 @@ export function ExternalLinkButton({ Path, Text, Icon, Style }: ButtonProps) {
         {Icon}
       </span>
       <BsBoxArrowUpRight
-        className='ml-1 h-[50%] self-start'
+        className='ml-1 max-h-[50%] self-start'
         aria-hidden='true'
       />
     </a>
@@ -64,7 +64,7 @@ export function CTAButton({ Path, Text, Icon, Style, Target }: ButtonProps) {
         bg-portfolio-accent px-4 py-2 rounded-xl
         text-kv-black
         shadow-md shadow-portfolio-primary/25
-        hover:bg-portfolio-secondary
+        hover:bg-portfolio-secondary hover:text-kv-white
         ${Style}
       `}
     >

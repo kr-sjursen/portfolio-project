@@ -33,7 +33,7 @@ export function Footer() {
     <footer className='
       relative w-full flex flex-col px-12 pt-4 pb-8 gap-4 mt-2
       bg-portfolio-primary
-      border-t border-portfolio-primary
+      border-t border-portfolio-tertiary
       text-kv-white
     '>
       <div className='flex flex-row justify-between gap-4'>

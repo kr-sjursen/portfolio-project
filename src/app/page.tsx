@@ -8,6 +8,7 @@ export default function Home() {
   // TODO: Add a concise intro: who i am, what i build, and what i am looking for.
   // TODO: Add a small featured-projects section.
   // TODO: Include one prominent contact or "let's talk" link.
+  // TODO: Consider adding a playground page for small experimental stuff.
   return (
     <main
       id='main'

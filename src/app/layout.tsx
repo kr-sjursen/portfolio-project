@@ -35,6 +35,16 @@ import { Header } from '@/components/navigation/Header';
 import { Footer } from '@/components/navigation/Footer';
 
 // TODO: Add a "scroll to top" button
+/**
+ * Notes:
+ * - Avoid loading screens (obviously).
+ * - Keep it fast and lightweight.
+ * - Avoid big distractions.
+ * - No pop-ups or chat boxes.
+ * - Any animations should either be subtle, or have a toggle.
+ * 
+ * - Consider a space-themed variant as a theme.
+ */
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html

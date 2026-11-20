@@ -3,6 +3,11 @@ import { FaGithub } from 'react-icons/fa';
 import { LuMapPin } from 'react-icons/lu';
 
 export function Hero() {
+  /**
+   * Notes:
+   * - Consider having h1 say something like "I build websites to be accessible", or "I make the web usable for everyone".
+   * - Consider letting the hero cover the full initial viewport.
+   */
   return (
   <section
     id='hero'

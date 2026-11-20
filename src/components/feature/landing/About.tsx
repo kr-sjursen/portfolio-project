@@ -1,4 +1,22 @@
 export function About() {
+  /**
+   * Notes:
+   * - Add a section on what roles i am looking for.
+   * - Add a section that can display my Github activity.
+   *   - Maybe with a streak count?
+   *   - Have it link to my Github profile.
+   * - Consider adding hobbies or interests.
+   * - Maybe add a photo.
+   * - Consider a timeline of experience.
+   * - Consider a tech-tree showing how different skills connect.
+   * - Maybe something about what i like about web development.
+   * - What is my favourite thing to build?
+   * - What is something i want to learn next?
+   * - What do i want to create next?
+   */
+  // TODO: Consider adding a Leetcode link?
+  // TODO: Add something about how i keep adding TODOs to my code, like this one?
+  // TODO: Consider splitting the education and skills into separate sections ("my toolkit" or similar?).
   return (
     <section
       id='about'

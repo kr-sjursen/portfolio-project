@@ -1,4 +1,9 @@
 export function Accessibility() {
+  /**
+   * Notes:
+   * - Add direct examples of accessible features.
+   * - Is it rude to add examples of common inaccessible patterns that look cool?
+   */
   return (
     <article
       id='accessibility'

@@ -3,6 +3,10 @@ import { FaGithub } from 'react-icons/fa';
 import Link from 'next/link'
 
 export function FeaturedProjects() {
+  /**
+   * Notes:
+   * - Consider a "load more projects" button at the end?
+   */
   return (
     <section
       id='featured-projects'

@@ -1,6 +1,21 @@
 import { FaEnvelope } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa';
 
+/**
+ * Inspiration observations:
+ * - Some add contact info in cards.
+ *   - Consider adding timezone info.
+ *   - State that i am available for remote work.
+ * - Consider adding a contact form (even if it requires some backend)
+ *   - Fields for: full name, email, subject, message.
+ * - Improve title to be more engaging (like "Let's build something" but less generic)
+ * - Consider adding a subtitle for context? (like "Have a project in mind? I'd love to hear about it.")
+ *
+ * Maybe structure can be more like the following:
+ * [Email]    [Form]
+ * [LinkedIn] [Form]
+ * [Location] [Form]
+ */
 export function ContactCTA() {
   return (
     <section

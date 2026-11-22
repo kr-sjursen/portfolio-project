@@ -1,7 +1,6 @@
-import { InternalLinkButton, ExternalLinkButton } from '@/components/buttons/LinkButtons'
+import { ProjectCard } from '@/components/cards/ProjectCard'
+import { LinkButton } from '@/components/buttons/LinkButtons'
 import { FaGithub } from 'react-icons/fa';
-import Link from 'next/link'
-import Image from 'next/image'
 
 export function FeaturedProjects() {
   const projects = [
@@ -50,77 +49,25 @@ export function FeaturedProjects() {
         flex flex-row justify-around gap-4 content-stretch
       '>
         {projects.map((project, index) => (
-          <li
+          <ProjectCard
             key={index}
-            className='
-              flex flex-col gap-2 w-full pb-4
-              bg-portfolio-secondary
-              border border-portfolio-tertiary rounded-lg
-            '
-          >
-            <div className='flex flex-col gap-2 w-full grow px-4'>
-              <h3 className='text-2xl'>{project.title}</h3>
-              <p className='grow'>{project.description}</p>
-              <ul className='flex flex-row gap-2 mb-2'>
-                {project.tech.map((t, i) => (
-                  <li // TODO: Consider linking tech to docs for easy access
-                    key={i}
-                    className='
-                      bg-portfolio-tertiary px-2 py-1 rounded
-                      text-sm
-                      hover:bg-portfolio-accent hover:text-kv-black
-                    '
-                  >
-                    {t}
-                  </li>
-                ))}
-              </ul>
-              <div className='flex flex-row gap-2 justify-between'>
-                {project.link &&
-                  <a href={project.link}>View</a>
-                }
-                {project.github &&
-                  <a href={project.github}>GitHub</a>
-                }
-                {project.caseStudy &&
-                  <a href={project.caseStudy}>Case study</a>
-                }
-              </div>
-            </div>
-            <div className='
-              flex justify-center content-center order-first
-              aspect-3/2 w-full max-h-65 mb-2
-              bg-portfolio-primary rounded-t-lg
-            '>
-              {project.image ?
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  width={300}
-                  height={200}
-                />
-                : <p className='self-center'>No image</p>
-              }
-            </div>
-          </li>
+            Title={project.title}
+            Description={project.description}
+            Tech={project.tech}
+            Href={project.link}
+            CaseLink={project.caseStudy}
+            Github={project.github}
+          />
         ))}
       </ul>
       <div className='flex flex-col gap-2'>
         <p>Find more of my projects on my GitHub:</p>
-        <Link
-          className='
-            inline-flex items-center gap-1 w-fit px-4 py-2
-            bg-portfolio-accent text-kv-black rounded-lg
-            hover:bg-portfolio-primary hover:text-kv-white
-            border border-portfolio-primary/25
-          '
-          href='https://github.com/kr-sjursen'
-        >
-          My GitHub
-          <FaGithub
-            className='inline order-first'
-          /> 
-        </Link>
+        <LinkButton
+          Path='https://github.com/kr-sjursen'
+          Text='My GitHub'
+          Icon={<FaGithub />}
+          IsExternal
+        />
       </div>
     </section>
   )

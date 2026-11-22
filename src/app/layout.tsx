@@ -37,6 +37,7 @@ import { Footer } from '@/components/navigation/Footer';
 // TODO: Add a "scroll to top" button
 // TODO: Ensure that there is more white space around sections
 // TODO: Ensure that links to sections can be clicked multiple times, and still work
+// TODO: Componentize more parts of the website.
 /**
  * Notes:
  * - Avoid loading screens (obviously).

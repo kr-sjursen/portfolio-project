@@ -1,61 +1,62 @@
 import Link from 'next/link';
-import { BsBoxArrowUpRight } from 'react-icons/bs';
 
 interface ButtonProps {
   Path: string;
-  Target?: string;
+  IsExternal?: boolean;
+  IsButton?: boolean;
+  OnClick?: () => void;
   Text?: string;
   Icon?: React.ReactNode; // TODO: Use IconType instead.
   Style?: string;
 };
 
-export function InternalLinkButton({ Path, Text, Icon, Style }: ButtonProps) {
+/**
+ * Notes:
+ * - <Link> is used for internal links.
+ * - <a> is used for external links.
+ */
+export function LinkButton({
+  IsExternal = false,
+  Path,
+  Text,
+  Icon,
+  Style
+}: ButtonProps) {
+  const Element = IsExternal ? 'a' : Link;
+  const props = IsExternal ? { href: Path, target: '_blank', rel: 'noopener' }
+    : { href: Path };
+
+  // TODO: Add support for actual button with onClick and/or type
   return (
-    <Link
-      href={Path}
+    <Element
       className={`
-        flex items-baseline justify-center 
-        bg-portfolio-primary px-4 py-2 rounded-xl
-        hover:bg-portfolio-accent hover:text-black
-        text-white shadow-md shadow-portfolio-primary/25
+        flex flex-row gap-1 justify-center items-center
+        px-4 py-2 rounded-lg
+        bg-portfolio-accent-dark
+        text-black text-base
+        border border-portfolio-primary
+        hover:bg-portfolio-accent
+        focus:bg-portfolio-accent
+        focus:outline-2 focus:outline-portfolio-accent-dark
+        focus:-outline-offset-2
         ${Style}
       `}
+      {...props}
     >
       {Text}
-      <span aria-hidden='true'>
-        {Icon}
-      </span>
-    </Link>
+      {Icon &&
+        <span
+          className='order-first'
+          aria-hidden='true'
+        >
+          {Icon}
+        </span>
+      }
+    </Element>
   )
 }
 
-export function ExternalLinkButton({ Path, Text, Icon, Style }: ButtonProps) {
-  return (
-    <a
-      href={Path}
-      target='_blank'
-      rel='noopener noreferrer'
-      className={`
-        flex items-baseline justify-center 
-        bg-portfolio-primary px-4 py-2 pl-6 rounded-xl
-        hover:bg-portfolio-accent hover:text-black
-        text-white shadow-md shadow-portfolio-primary/25
-        ${Style}
-      `}
-    >
-      {Text}
-      <span aria-hidden='true'>
-        {Icon}
-      </span>
-      <BsBoxArrowUpRight
-        className='ml-1 max-h-[50%] self-start'
-        aria-hidden='true'
-      />
-    </a>
-  )
-}
-
-export function CTAButton({ Path, Text, Icon, Style, Target }: ButtonProps) {
+export function CTAButton({ Path, Text, Icon, Style }: ButtonProps) {
   return (
     <Link
       href={Path}

@@ -22,7 +22,7 @@ export function Hero() {
   >
     <h1
       id='hero-title'
-      className='text-3xl'
+      className='text-4xl'
     >
       Hello, I&apos;m <span className='font-bold'>Kristian Sjursen</span>
     </h1>

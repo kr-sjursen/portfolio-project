@@ -1,6 +1,25 @@
 import { FaEnvelope } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa';
 import { ContactForm } from '@/components/feature/contact/ContactForm';
+import { ContactCard } from '@/components/feature/contact/ContactCard';
+
+const contactInfo = [
+  {
+    Contact: 'kr.sjursen@gmail.com',
+    Type: 'Email',
+    Subtitle: 'Reach me anytime'
+  },
+  {
+    Contact: 'https://www.linkedin.com/in/kristian-sjursen-785436390/',
+    Type: 'LinkedIn',
+    Subtitle: 'Connect with me'
+  },
+  {
+    Contact: 'Bergen, Norway',
+    Type: 'Location',
+    Subtitle: 'Remote work available'
+  }
+];
 
 /**
  * Inspiration observations:
@@ -22,17 +41,20 @@ export function ContactCTA() {
     <section
       id='contact'
       className='
-        flex flex-row gap-2 max-w-300
-        mx-auto mb-8 px-8 py-6
+        flex flex-col gap-6 max-w-300
+        mx-auto mb-8 px-10 py-8
         bg-portfolio-primary rounded-lg
         border border-portfolio-tertiary
       '
       aria-labelledby='contact-title'
     >
-      <div className='flex flex-col gap-2 justify-center'>
+      <div className='
+        flex flex-col gap-2
+        text-center
+      '>
         <h2
           id='contact-title'
-          className='text-3xl'
+          className='text-4xl'
         >
           Let&apos;s Talk!
         </h2>
@@ -41,40 +63,18 @@ export function ContactCTA() {
           accessible, one website at a time. 
         </p>
         <p>I can be reached via email or LinkedIn, feel free to connect anytime.</p>
-        <div className='flex gap-2 mb-2'>
-          <a
-            className='
-              flex items-center gap-1 w-fit px-4 py-2
-              bg-portfolio-accent-dark text-kv-black rounded-lg
-              hover:bg-portfolio-accent
-              shadow-md shadow-portfolio-primary/25
-            '
-            href='mailto:kr.sjursen@gmail.com'
-          >
-            Email
-            <FaEnvelope
-              className='order-first'
-              aria-hidden='true'
-            />
-          </a>
-          <a
-            className='
-              flex items-center gap-1 w-fit px-4 py-2
-              bg-portfolio-accent-dark text-kv-black rounded-lg
-              hover:bg-portfolio-accent
-              shadow-md shadow-portfolio-primary/25
-            '
-            href='https://www.linkedin.com/in/kristian-sjursen-785436390/'
-          >
-            LinkedIn
-            <FaLinkedin
-              className='order-first'
-              aria-hidden='true'
-            />
-          </a>
-        </div>
       </div>
-      <ContactForm />
+      <div className='flex flex-row gap-4'>
+        <ul
+          className='flex flex-col gap-4 shrink'
+          aria-label='Contact info'
+        >
+          {contactInfo.map(info => (
+            <ContactCard key={info.Type} {...info} />
+          ))}
+        </ul>
+        <ContactForm />
+      </div>
     </section>
   )
 }

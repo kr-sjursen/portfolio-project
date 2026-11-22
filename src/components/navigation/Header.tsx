@@ -26,6 +26,7 @@ export function Header() {
     }
   ];
 
+  // TODO: Fix header covering the top of content when jumping to sections
   return (
     <header className='
       flex flex-row w-full top-0 p-2 py-3 mb-2 bg-portfolio-primary

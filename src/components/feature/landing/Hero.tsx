@@ -12,8 +12,8 @@ export function Hero() {
   <section
     id='hero'
     className='
-      flex flex-col gap-2 mx-auto
-      px-8 py-12 mt-2 mb-8
+      flex flex-col gap-2 mx-6
+      px-8 py-12 mt-6 mb-8
       bg-portfolio-primary rounded-lg
       border border-portfolio-tertiary
       shadow-md shadow-portfolio-primary/25
@@ -22,7 +22,7 @@ export function Hero() {
   >
     <h1
       id='hero-title'
-      className='text-4xl'
+      className='text-4xl my-2'
     >
       Hello, I&apos;m <span className='font-bold'>Kristian Sjursen</span>
     </h1>
@@ -51,7 +51,7 @@ export function Hero() {
         Text='GitHub'
         Icon={<FaGithub />}
       />
-      <CTAButton Path='/contact' Text='Contact me' />
+      <CTAButton Path='#contact' Text='Contact me' />
     </div>
   </section>
   )

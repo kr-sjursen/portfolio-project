@@ -1,5 +1,3 @@
-import { FaEnvelope } from 'react-icons/fa';
-import { FaLinkedin } from 'react-icons/fa';
 import { ContactForm } from '@/components/feature/contact/ContactForm';
 import { ContactCard } from '@/components/feature/contact/ContactCard';
 
@@ -26,15 +24,10 @@ const contactInfo = [
  * - Some add contact info in cards.
  *   - Consider adding timezone info.
  *   - State that i am available for remote work.
- * - Consider adding a contact form (even if it requires some backend)
- *   - Fields for: full name, email, subject, message.
+ * - Add backend for the contact form
+ * - Set up a CMS for managing form responses.
  * - Improve title to be more engaging (like "Let's build something" but less generic)
  * - Consider adding a subtitle for context? (like "Have a project in mind? I'd love to hear about it.")
- *
- * Maybe structure can be more like the following:
- * [Email]    [Form]
- * [LinkedIn] [Form]
- * [Location] [Form]
  */
 export function ContactCTA() {
   return (
@@ -49,7 +42,7 @@ export function ContactCTA() {
       aria-labelledby='contact-title'
     >
       <div className='
-        flex flex-col gap-2
+        flex flex-col gap-4 mb-2
         text-center
       '>
         <h2
@@ -66,7 +59,7 @@ export function ContactCTA() {
       </div>
       <div className='flex flex-row gap-4'>
         <ul
-          className='flex flex-col gap-4 shrink'
+          className='flex flex-col gap-4'
           aria-label='Contact info'
         >
           {contactInfo.map(info => (

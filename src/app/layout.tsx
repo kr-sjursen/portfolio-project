@@ -35,6 +35,8 @@ import { Header } from '@/components/navigation/Header';
 import { Footer } from '@/components/navigation/Footer';
 
 // TODO: Add a "scroll to top" button
+// TODO: Ensure that there is more white space around sections
+// TODO: Ensure that links to sections can be clicked multiple times, and still work
 /**
  * Notes:
  * - Avoid loading screens (obviously).
@@ -44,6 +46,7 @@ import { Footer } from '@/components/navigation/Footer';
  * - Any animations should either be subtle, or have a toggle.
  * 
  * - Consider a space-themed variant as a theme.
+ * - Do a snow effect for winter theme.
  */
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (

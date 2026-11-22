@@ -23,6 +23,8 @@ export function About() {
       className='
         flex flex-col gap-2 max-w-300
         mx-auto mb-8 px-8 py-6
+        bg-portfolio-primary rounded-lg
+        border border-portfolio-tertiary
       '
       aria-labelledby='about-title'
     >

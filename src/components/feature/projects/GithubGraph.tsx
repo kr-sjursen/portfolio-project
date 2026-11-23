@@ -143,7 +143,7 @@ export async function GithubGraph() {
 
 {/*
   TODO: Remove daily counts section, and add a hover tooltip for each day instead.
- */}
+
       <details>
         <summary>View daily contribution counts</summary>
         <ul>
@@ -155,7 +155,7 @@ export async function GithubGraph() {
         </ul>
       </details>
 
-      <a href="https://github.com/kr-sjursen">View my GitHub profile</a>
+      <a href="https://github.com/kr-sjursen">View my GitHub profile</a>*/}
     </section>
   );
 }

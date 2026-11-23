@@ -1,4 +1,5 @@
 import { Hero } from '@/components/feature/landing/Hero';
+import { GithubGraph } from '@/components/feature/projects/GithubGraph';
 import { FeaturedProjects } from '@/components/feature/landing/FeaturedProjects';
 import { About } from '@/components/feature/landing/About';
 import { Accessibility } from '@/components/feature/landing/Accessibility';
@@ -15,6 +16,7 @@ export default function Home() {
       className='relative mx-auto w-full max-w-[98%] text-kv-white'
     >
       <Hero />
+      <GithubGraph />
       <About />
       <Accessibility />
       <FeaturedProjects />

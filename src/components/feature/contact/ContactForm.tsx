@@ -1,5 +1,7 @@
+import Form from 'next/form'
 import { FaPhone, FaPen } from 'react-icons/fa';
 import { IoPerson, IoMailSharp } from 'react-icons/io5';
+import { LinkButton } from '@/components/buttons/LinkButtons'
 
 const required = <span className='text-red-400 ml-1' aria-hidden='true'>*</span>;
 const data = [
@@ -37,14 +39,15 @@ const data = [
   }
 ];
 
-// TODO: Consider adding a subject dropdown?
+// TODO: Consider adding a subject dropdown? (can i have a dropdown with a free-text option?)
 // TODO: Add a confirmation message after submit.
 // TODO: Add form validation feedback.
 // TODO: Consider limiting message length, to incentivize brevity (e.g., 2000 chars should be plenty). If limit has been reached, give an explanation to the user and give a recommendation to shorten it, but consider giving an option to override it (but, add quiet warning in subject line).
 // TODO: Test form fields with long input to ensure layout holds.
 export function ContactForm() {
   return (
-    <form
+    <Form
+      action='/' // TODO: set correct endpoint
       id='contact-form'
       className='
         flex flex-col wrap gap-x-2 gap-y-4 px-6 py-4 justify-center
@@ -121,6 +124,10 @@ export function ContactForm() {
           required
         />
       </div>
+      {/*<LinkButton
+        Text='Send'
+        IsButton
+      />*/}
       <button
         type='submit'
         className='
@@ -136,6 +143,6 @@ export function ContactForm() {
       >
         Send
       </button>
-    </form>
+    </Form>
   );
 }

@@ -9,11 +9,10 @@ interface ProjectCardProps {
   Href?: string | null;
   CaseLink?: string | null;
   Github?: string | null;
-  key?: number;
 }
 
 export function ProjectCard({
-  Title, Description, Tech, ImageSrc, Href, CaseLink, Github, key
+  Title, Description, Tech, ImageSrc, Href, CaseLink, Github
 }: ProjectCardProps) {
   const id = Title.toLowerCase().replace(/\s+/g, '-');
   const links = [
@@ -26,7 +25,6 @@ export function ProjectCard({
   return (
     <li
       id={id}
-      key={key}
       className='
         flex flex-col gap-2 w-full pb-4
         bg-portfolio-secondary
@@ -52,7 +50,7 @@ export function ProjectCard({
             )}
           </ul>
         }
-        <div className='flex flex-row gap-2 justify-between'>
+        <div className='flex flex-row gap-2 justify-center'>
           {links.map(link => (
             <LinkButton
               key={link.text}

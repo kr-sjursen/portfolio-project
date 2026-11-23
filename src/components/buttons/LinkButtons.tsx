@@ -17,12 +17,13 @@ interface ButtonProps {
  */
 export function LinkButton({
   IsExternal = false,
+  IsButton = false,
   Path,
   Text,
   Icon,
   Style
 }: ButtonProps) {
-  const Element = IsExternal ? 'a' : Link;
+  const Element = IsExternal ? 'a' : IsButton ? 'button' : Link;
   const props = IsExternal ? { href: Path, target: '_blank', rel: 'noopener' }
     : { href: Path };
 

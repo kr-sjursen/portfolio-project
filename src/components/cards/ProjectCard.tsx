@@ -1,6 +1,5 @@
-import Image from 'next/image'
-import type { projectItem } from '@/util/projects';
-import { LinkButton } from '@/components/buttons/LinkButtons'
+import Image from 'next/image';
+import { LinkButton } from '@/components/buttons/LinkButtons';
 
 interface ProjectCardProps {
   Title: string;
@@ -23,7 +22,6 @@ export function ProjectCard({
   ].filter((link): link is { href: string; text: string; isExternal: boolean } => !!link.href);
   // TODO: Make tech pill component
   // TODO: Use link button component
-  // TODO: Use projectItem type for props
   return (
     <li
       id={id}

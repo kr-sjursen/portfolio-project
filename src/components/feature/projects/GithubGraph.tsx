@@ -1,6 +1,5 @@
 import { cacheLife } from 'next/cache';
 
-// TODO: Fetch and display GitHub graph
 // TODO: Show how many contributions in total (or this year)
 // TODO: Show total amount of active days total (or this year)
 // TODO: Show my current streak

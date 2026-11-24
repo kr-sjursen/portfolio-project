@@ -1,7 +1,7 @@
 // Styling
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
-import { Roboto } from 'next/font/google'
+import { Roboto } from 'next/font/google';
 import '@/assets/global.css';
 import { ScreenSizeMarker } from '@/components/ScreenSizeMarker';
 

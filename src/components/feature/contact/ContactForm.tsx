@@ -124,25 +124,11 @@ export function ContactForm() {
           required
         />
       </div>
-      {/*<LinkButton
+      <LinkButton
         Text='Send'
+        Type='submit'
         IsButton
-      />*/}
-      <button
-        type='submit'
-        className='
-          px-4 py-2 rounded-lg
-          bg-portfolio-accent-dark
-          text-black text-base
-          border border-portfolio-primary
-          hover:bg-portfolio-accent
-          focus:bg-portfolio-accent
-          focus:outline-2 focus:outline-portfolio-accent-dark
-          focus:-outline-offset-2
-        '
-      >
-        Send
-      </button>
+      />
     </Form>
   );
 }

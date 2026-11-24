@@ -1,4 +1,4 @@
-import { LinkButton } from '@/components/buttons/LinkButtons'
+import { LinkButton } from '@/components/buttons/LinkButtons';
 import { FaGithub } from 'react-icons/fa';
 import { LuMapPin } from 'react-icons/lu';
 

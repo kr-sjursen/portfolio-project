@@ -1,30 +1,9 @@
 import { projects } from '@/util/projects';
-import { ProjectCard } from '@/components/cards/ProjectCard'
-import { LinkButton } from '@/components/buttons/LinkButtons'
+import { ProjectCard } from '@/components/cards/ProjectCard';
+import { LinkButton } from '@/components/buttons/LinkButtons';
 import { FaGithub } from 'react-icons/fa';
 
 export function FeaturedProjects() {
-  // TODO: Make a projects.ts file for data
-  const Projects = [
-    {
-      title: 'Project 1',
-      description: 'Short description.',
-      tech: ['HTML', 'CSS', 'JavaScript', 'React', 'Tailwind', 'Next', 'Git', 'GitHub'],
-      link: '/project1',
-      caseStudy: '/project1-case-study',
-      image: null,
-      github: 'https://github.com/kr-sjursen/'
-    },
-    {
-      title: 'Jobloop',
-      description: 'I got to work on improving the accessibility of this site. This included a more semantic structure, proper labels, and easier navigation.',
-      tech: ['Next', 'React', 'Tailwind'],
-      link: 'https://www.jobloop.no/',
-      caseStudy: null,
-      image: null,
-      github: 'https://github.com/Kodeverket-AS/Project-Jobloop'
-    }
-  ];
   /**
    * Notes:
    * - Consider a "load more projects" button at the end?

@@ -30,6 +30,7 @@ const contactInfo = [
  * - Consider adding a subtitle for context? (like "Have a project in mind? I'd love to hear about it.")
  */
 export function ContactCTA() {
+  // TODO: Wrap section on smaller screens
   return (
     <section
       id='contact'

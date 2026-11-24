@@ -1,82 +1,77 @@
 import Link from 'next/link';
 
-interface ButtonProps {
+type CommonProps = {
+  Text?: string;
+  Icon?: React.ReactNode;
+  Style?: string;
+};
+
+type LinkProps = CommonProps & {
   Path: string;
   IsExternal?: boolean;
-  IsButton?: boolean;
-  OnClick?: () => void;
-  Text?: string;
-  Icon?: React.ReactNode; // TODO: Use IconType instead.
-  Style?: string;
+  IsButton?: false;
+};
+
+type ButtonProps = CommonProps & {
+  IsButton: true;
+  Type?: 'button' | 'submit' | 'reset';
+  OnClick?: React.MouseEventHandler<HTMLButtonElement>;
 };
 
 /**
  * Notes:
  * - <Link> is used for internal links.
  * - <a> is used for external links.
+ * - IsButton determines if it's a button or link.
  */
-export function LinkButton({
-  IsExternal = false,
-  IsButton = false,
-  Path,
-  Text,
-  Icon,
-  Style
-}: ButtonProps) {
-  const Element = IsExternal ? 'a' : IsButton ? 'button' : Link;
-  const props = IsExternal ? { href: Path, target: '_blank', rel: 'noopener' }
-    : { href: Path };
+export function LinkButton(props: LinkProps | ButtonProps) {
+  const { Text, Icon, Style } = props;
+  const className = `
+    flex flex-row gap-1 justify-center items-center
+    px-4 py-2 rounded-lg
+    bg-portfolio-accent-dark
+    text-black text-base
+    border border-portfolio-primary
+    hover:bg-portfolio-accent
+    focus:bg-portfolio-accent
+    focus:outline-2 focus:outline-portfolio-accent-dark
+    focus:-outline-offset-2
+    ${Style ?? ''}
+  `;
 
-  // TODO: Add support for actual button with onClick and/or type
-  return (
-    <Element
-      className={`
-        flex flex-row gap-1 justify-center items-center
-        px-4 py-2 rounded-lg
-        bg-portfolio-accent-dark
-        text-black text-base
-        border border-portfolio-primary
-        hover:bg-portfolio-accent
-        focus:bg-portfolio-accent
-        focus:outline-2 focus:outline-portfolio-accent-dark
-        focus:-outline-offset-2
-        ${Style}
-      `}
-      {...props}
-    >
+  const content = (
+    <>
       {Text}
-      {Icon &&
-        <span
-          className='order-first'
-          aria-hidden='true'
-        >
+      {Icon && (
+        <span className='order-first' aria-hidden='true'>
           {Icon}
         </span>
-      }
-    </Element>
-  )
-}
+      )}
+    </>
+  );
 
-export function CTAButton({ Path, Text, Icon, Style }: ButtonProps) {
-  return (
-    <Link
-      href={Path}
-      className={`
-        flex items-center justify-center gap-1
-        bg-portfolio-accent px-4 py-2 rounded-xl
-        text-kv-black
-        shadow-md shadow-portfolio-primary/25
-        hover:bg-portfolio-secondary hover:text-kv-white
-        ${Style}
-      `}
-    >
-      {Text}
-      <span
-        className='order-first mb-0.5'
-        aria-hidden='true'
+  if (props.IsButton) {
+    return (
+      <button
+        type={props.Type ?? 'button'}
+        onClick={props.OnClick}
+        className={className}
       >
-        {Icon}
-      </span>
-    </Link>
-  )
+        {content}
+      </button>
+    );
+  }
+
+  const Element = props.IsExternal ? 'a' : Link;
+
+  return (
+    <Element
+      href={props.Path}
+      target={props.IsExternal ? '_blank' : undefined}
+      rel={props.IsExternal ? 'noopener' : undefined}
+      className={className}
+    >
+      {content}
+    </Element>
+  );
 }

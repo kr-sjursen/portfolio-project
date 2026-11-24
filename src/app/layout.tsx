@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { Roboto } from 'next/font/google'
 import '@/assets/global.css';
+import { ScreenSizeMarker } from '@/components/ScreenSizeMarker';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -50,6 +51,7 @@ import { Footer } from '@/components/navigation/Footer';
  * - Do a snow effect for winter theme.
  */
 export default function RootLayout({ children }: LayoutProps<"/">) {
+  const isDev = process.env.NODE_ENV === 'development';
   return (
     <html
       lang='en'
@@ -58,6 +60,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className='min-h-full flex flex-col bg-portfolio-secondary'>
         <Header />
         {children}
+        {isDev && <ScreenSizeMarker />}
         <Footer />
       </body>
     </html>

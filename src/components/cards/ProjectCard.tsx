@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import type { projectItem } from '@/util/projects';
 import { LinkButton } from '@/components/buttons/LinkButtons'
 
 interface ProjectCardProps {
@@ -22,6 +23,7 @@ export function ProjectCard({
   ].filter((link): link is { href: string; text: string; isExternal: boolean } => !!link.href);
   // TODO: Make tech pill component
   // TODO: Use link button component
+  // TODO: Use projectItem type for props
   return (
     <li
       id={id}
@@ -51,7 +53,7 @@ export function ProjectCard({
           </ul>
         }
         <div className='flex flex-row gap-2 justify-center'>
-          {links.map(link => (
+          {links.map(link => ( // TODO: Add automatic icons for links
             <LinkButton
               key={link.text}
               Path={link.href}

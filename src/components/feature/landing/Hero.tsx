@@ -1,4 +1,4 @@
-import { CTAButton } from '@/components/buttons/LinkButtons'
+import { LinkButton } from '@/components/buttons/LinkButtons'
 import { FaGithub } from 'react-icons/fa';
 import { LuMapPin } from 'react-icons/lu';
 
@@ -46,12 +46,12 @@ export function Hero() {
       </p>
     </div>
     <div className='flex flex-row gap-4'>
-      <CTAButton
+      <LinkButton
         Path='https://github.com/kr-sjursen'
         Text='GitHub'
         Icon={<FaGithub />}
       />
-      <CTAButton Path='#contact' Text='Contact me' />
+      <LinkButton Path='#contact' Text='Contact me' />
     </div>
   </section>
   )

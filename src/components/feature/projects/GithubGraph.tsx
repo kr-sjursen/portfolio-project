@@ -1,9 +1,8 @@
 import { cacheLife } from 'next/cache';
 
-// TODO: Show how many contributions in total (or this year)
-// TODO: Show total amount of active days total (or this year)
 // TODO: Show my current streak
-// TODO: Ensure that the data is not updated too often
+// TODO: Shorten the width to only show a few weeks
+// TODO: Show a hover tooltip for each active day
 
 type ContributionDay = {
   date: string;
@@ -102,7 +101,7 @@ export async function GithubGraph() {
     <section
       id='github-contributions'
       className='
-        mx-auto w-max mb-8 px-4 py-2
+        flex flex-col mx-auto w-max mb-8 px-4 py-2
         bg-portfolio-primary
         border border-portfolio-tertiary rounded-lg
       '
@@ -110,14 +109,14 @@ export async function GithubGraph() {
     >
       <h2
         id='github-contributions-title'
-        className='text-xl text-center'
+        className='order-first text-xl text-center'
       >
         GitHub Contributions
       </h2>
-      <p>{calendar.totalContributions} contributions in the past year</p>
-      <p>{activeDays} active days in the past year</p>
+      <p className='order-2'>{calendar.totalContributions} contributions in the past year</p>
+      <p className='order-3'>{activeDays} active days in the past year</p>
 
-      <div className='overflow-x-auto'>
+      <div className='order-1 overflow-x-auto mb-2'>
         <div
           className='flex w-max gap-1'
           aria-hidden='true'

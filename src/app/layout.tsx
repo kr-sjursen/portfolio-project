@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import { Roboto } from 'next/font/google';
 import '@/assets/global.css';
 import { ScreenSizeMarker } from '@/components/ScreenSizeMarker';
+import { ScrollToTop } from '@/components/navigation/ScrollToTop';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -61,6 +62,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Header />
         {children}
         {isDev && <ScreenSizeMarker />}
+        <ScrollToTop />
         <Footer />
       </body>
     </html>

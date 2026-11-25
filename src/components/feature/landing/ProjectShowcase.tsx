@@ -20,8 +20,8 @@ export function ProjectShowcase() {
           <ProjectCard
             Title='My Project'
             Tech={['React']}
-            Desc='A project that took time.'
-            Link='/my-project'
+            Description='A project that took time.'
+            Href='/my-project'
             CaseLink='/my-project-case'
           />
         </li>
@@ -29,8 +29,8 @@ export function ProjectShowcase() {
           <ProjectCard
             Title='Another Project'
             Tech={['Next.js']}
-            Desc='Another project that also took time, but longer. So it required a longer description, which lets me ensure that this component works with long text descriptions.'
-            Link='/another-project'
+            Description='Another project that also took time, but longer. So it required a longer description, which lets me ensure that this component works with long text descriptions.'
+            Href='/another-project'
           />
         </li>
       </ul>

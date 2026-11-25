@@ -1,8 +1,9 @@
+import { Suspense } from 'react';
+import { connection } from 'next/server';
 import { cacheLife } from 'next/cache';
+import { ContributionGrid } from './ContributionGrid';
 
-// TODO: Show my current streak
-// TODO: Shorten the width to only show a few weeks
-// TODO: Show a hover tooltip for each active day
+// TODO: Clean up the file and maybe move Streak elsewhere
 
 type ContributionDay = {
   date: string;
@@ -29,6 +30,8 @@ type GitHubResponse = {
   errors?: { message: string }[];
 };
 
+const WEEKS_TO_SHOW = 24;
+
 const query = `
   query Contributions($login: String!) {
     user(login: $login) {
@@ -48,6 +51,37 @@ const query = `
     }
   }
 `;
+
+function getCurrentStreak(days: ContributionDay[]): number {
+  const today = new Date().toISOString().slice(0, 10);
+  const pastDays = days.filter((day) => day.date <= today);
+
+  let index = pastDays.length - 1;
+
+  // Today with no contributions yet doesn't break the streak
+  if (index >= 0 && pastDays[index].contributionCount === 0) {
+    index--;
+  }
+
+  let streak = 0;
+  while (index >= 0 && pastDays[index].contributionCount > 0) {
+    streak++;
+    index--;
+  }
+
+  return streak;
+}
+
+async function Streak({ days }: { days: ContributionDay[] }) {
+  await connection(); // opt into request-time rendering so new Date() is allowed
+  const streak = getCurrentStreak(days);
+
+  return (
+    <>
+      Current streak: {streak} {streak === 1 ? 'day' : 'days'}
+    </>
+  );
+}
 
 async function getContributionCalendar(): Promise<ContributionCalendar> {
   'use cache';
@@ -115,45 +149,13 @@ export async function GithubGraph() {
       </h2>
       <p className='order-2'>{calendar.totalContributions} contributions in the past year</p>
       <p className='order-3'>{activeDays} active days in the past year</p>
+      <p className='order-4'>
+        <Suspense fallback='Current streak: …'>
+          <Streak days={days} />
+        </Suspense>
+      </p>
 
-      <div className='order-1 overflow-x-auto mb-2'>
-        <div
-          className='flex w-max gap-1'
-          aria-hidden='true'
-        >
-          {calendar.weeks.map((week) => (
-            <div
-              key={week.contributionDays[0].date}
-              className='grid grid-rows-7 gap-1'
-            >
-              {week.contributionDays.map((day) => (
-                <span
-                  key={day.date}
-                  className='h-3 w-3 rounded-sm'
-                  style={{backgroundColor: day.color, gridRowStart:  day.weekday + 1}}
-                  title={`${day.date}: ${day.contributionCount} contributions`}
-                />
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
-
-{/*
-  TODO: Remove daily counts section, and add a hover tooltip for each day instead.
-
-      <details>
-        <summary>View daily contribution counts</summary>
-        <ul>
-          {days.map((day) => (
-            <li key={day.date}>
-              {day.date}: {day.contributionCount} contributions
-            </li>
-          ))}
-        </ul>
-      </details>
-
-      <a href="https://github.com/kr-sjursen">View my GitHub profile</a>*/}
+      <ContributionGrid weeks={calendar.weeks.slice(-WEEKS_TO_SHOW)} />
     </section>
   );
 }

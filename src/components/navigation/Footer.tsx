@@ -33,7 +33,7 @@ export function Footer() {
     <footer
       id='site-footer'
       className='
-        relative w-full flex flex-col px-12 pt-4 pb-8 gap-4 mt-2
+        relative w-full flex flex-col px-12 pt-8 pb-10 gap-6 mt-6
         bg-portfolio-primary
         border-t border-portfolio-tertiary
         text-kv-white
@@ -69,7 +69,10 @@ export function Footer() {
           ))}
         </ul>
       </div>
-      <div className='flex flex-row justify-between text-sm'>
+      <div className='
+        flex flex-row justify-between text-sm
+        border-t border-portfolio-tertiary pt-4
+      '>
         <p className=''>© {year} Kristian Sjursen</p>
         <a
           href={repoLink}

@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { LinkButton } from '@/components/buttons/LinkButtons';
+import { LuArrowUp } from 'react-icons/lu';
 
 // TODO: Add smooth scroll effect
 // TODO: Hide button when at top of page
@@ -20,7 +20,7 @@ export function ScrollToTop() {
     }
 
     function updatePosition() {
-      setIsVisible(window.scrollY > window.innerHeight);
+      setIsVisible(window.scrollY > 100);
       const footerTop = footer!.getBoundingClientRect().top;
       setBottom(Math.max(16, window.innerHeight - footerTop + 16));
     }
@@ -48,14 +48,29 @@ export function ScrollToTop() {
 
   if (!isVisible) return null;
 
+  // TODO: Add animation on appear and disappear
   return (
     <div className='fixed right-4 z-99' style={{ bottom }}>
-      <LinkButton
-        IsButton
-        OnClick={scrollToTop}
-        Text='Scroll to top'
-        Style='rounded-full! w-20 h-20'
-      />
+      <button
+        onClick={scrollToTop}
+        title='Scroll to top'
+        className='
+          flex flex-row justify-center items-center p-2
+          bg-portfolio-accent-dark
+          text-black text-base
+          border border-portfolio-primary
+          hover:bg-portfolio-accent
+          focus:bg-portfolio-accent
+          focus:outline-2 focus:outline-portfolio-accent-dark
+          focus:-outline-offset-2
+          rounded-full! w-18 h-18
+        '
+      >
+        <LuArrowUp
+          className='w-8 h-8'
+          aria-hidden='true'
+        />
+      </button>
     </div>
   );
 }

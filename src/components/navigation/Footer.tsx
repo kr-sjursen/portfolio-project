@@ -30,12 +30,15 @@ const contactLinks = [
 // TODO: Add a report issues link to the GitHub repo.
 export function Footer() {
   return (
-    <footer className='
-      relative w-full flex flex-col px-12 pt-4 pb-8 gap-4 mt-2
-      bg-portfolio-primary
-      border-t border-portfolio-tertiary
-      text-kv-white
-    '>
+    <footer
+      id='site-footer'
+      className='
+        relative w-full flex flex-col px-12 pt-4 pb-8 gap-4 mt-2
+        bg-portfolio-primary
+        border-t border-portfolio-tertiary
+        text-kv-white
+      '
+    >
       <div className='flex flex-row justify-between gap-4'>
         <div className='flex flex-col grow gap-1'>
           <h2>Kristian Sjursen</h2>

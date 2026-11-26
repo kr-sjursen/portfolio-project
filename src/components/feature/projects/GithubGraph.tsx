@@ -4,6 +4,7 @@ import { cacheLife } from 'next/cache';
 import { ContributionGrid } from './ContributionGrid';
 
 // TODO: Clean up the file and maybe move Streak elsewhere
+// BUG: This component may fail the page if GitHub API is down, fallback needed.
 
 type ContributionDay = {
   date: string;
@@ -127,7 +128,15 @@ async function getContributionCalendar(): Promise<ContributionCalendar> {
 }
 
 export async function GithubGraph() {
-  const calendar = await getContributionCalendar();
+  await connection();
+
+  let calendar: ContributionCalendar;
+  try {
+    calendar = await getContributionCalendar();
+  } catch (error) {
+    console.error('Unable to load GitHub contributions:', error);
+    return <p>GitHub contributions are temporarily unavailable.</p>;
+  }
   const days = calendar.weeks.flatMap((week) => week.contributionDays);
   const activeDays = days.filter((day) => day.contributionCount > 0).length;
 

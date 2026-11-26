@@ -27,7 +27,7 @@ const contactLinks = [
 
 // TODO: Add legal links if needed.
 // TODO: Add version controller so I can update the version easily without thinking about it.
-// TODO: Add a report issues link to the GitHub repo.
+// TODO: Add a report issues link to the GitHub repo (https://github.com/kr-sjursen/portfolio-project/issues).
 export function Footer() {
   return (
     <footer

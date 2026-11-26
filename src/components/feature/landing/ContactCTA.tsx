@@ -37,8 +37,6 @@ export function ContactCTA() {
       className='
         flex flex-col gap-6 max-w-300
         mx-auto mb-8 px-10 py-8
-        bg-portfolio-primary rounded-lg
-        border border-portfolio-tertiary
       '
       aria-labelledby='contact-title'
     >

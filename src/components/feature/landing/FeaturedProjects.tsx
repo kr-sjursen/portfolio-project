@@ -12,10 +12,8 @@ export function FeaturedProjects() {
     <section
       id='projects'
       className='
-        flex flex-col gap-2 max-w-300
+        flex flex-col gap-4 max-w-300
         mx-auto mb-8 px-10 py-8
-        bg-portfolio-primary rounded-lg
-        border border-portfolio-tertiary
       '
       aria-labelledby='featured-projects-title'
     >
@@ -26,9 +24,6 @@ export function FeaturedProjects() {
         Featured Projects
       </h2>
       <p className='text-center mb-2'>Some projects i have worked on.</p>
-      <ul className='
-        flex flex-row flex-wrap lg:flex-nowrap justify-around gap-4 content-stretch
-      '>
         {projects.length === 0 && (
           <section
             id='no-projects'
@@ -49,24 +44,31 @@ export function FeaturedProjects() {
             </p>
           </section>
         )}
-        {projects.map((project, index) => (
-          <ProjectCard
-            key={index}
-            Title={project.title}
-            Description={project.description}
-            Tech={project.stack}
-            Href={project.projectLink}
-            CaseLink={project.caseStudyPath}
-            Github={project.github}
-          />
-        ))}
-      </ul>
+        {projects.length > 0 && (
+          <ul className='
+            flex flex-row flex-wrap lg:flex-nowrap justify-around gap-4
+            content-stretch
+          '>
+            {projects.map((project, index) => (
+              <ProjectCard
+                key={index}
+                Title={project.title}
+                Description={project.description}
+                Tech={project.stack}
+                Href={project.projectLink}
+                CaseLink={project.caseStudyPath}
+                Github={project.github}
+              />
+            ))}
+          </ul>
+        )}
       <div className='flex flex-col gap-2'>
         <p>Find more of my projects on my GitHub:</p>
         <LinkButton
           Path='https://github.com/kr-sjursen'
           Text='My GitHub'
           Icon={<FaGithub />}
+          Style='w-[300px]'
           IsExternal
         />
       </div>

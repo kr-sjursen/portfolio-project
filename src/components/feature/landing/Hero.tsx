@@ -1,12 +1,9 @@
 import { LinkButton } from '@/components/buttons/LinkButtons';
-import { FaGithub } from 'react-icons/fa';
-import { LuMapPin } from 'react-icons/lu';
 
 export function Hero() {
   /**
    * Notes:
-   * - Consider having h1 say something like "I build websites to be accessible", or "I make the web usable for everyone".
-   * - Consider letting the hero cover the full initial viewport.
+   * - Have an image or illustration of either myself or something representative of me.
    */
   return (
   <section
@@ -28,8 +25,9 @@ export function Hero() {
     </h1>
     <div className='
       flex gap-2 order-first text-sm hover:cursor-default
+      text-portfolio-accent *:hover:text-portfolio-accent-light
       *:not-aria-hidden:hover:underline *:hover:decoration-portfolio-accent
-      *:hover:underline-offset-2
+      *:hover:underline-offset-2 font-mono
     '>
       <span>Web developer</span>
       <span aria-hidden='true'>·</span>
@@ -37,21 +35,18 @@ export function Hero() {
     </div>
     <div className='flex flex-col gap-4 mb-4'>
       <p>I&apos;m a web developer specializing in responsive, accessible interfaces, with experience in React, Next.js, JavaScript, and PHP.</p>
-      <p>
-        <LuMapPin
-          className='inline mr-1'
-          aria-hidden='true'
-        />
-        Based in Bergen, Norway &#x1F1F3;&#x1F1F4;
-      </p>
+      <p className='text-sm text-kv-white/70'>Based in Bergen, Norway</p>
     </div>
     <div className='flex flex-row gap-4'>
       <LinkButton
-        Path='https://github.com/kr-sjursen'
-        Text='GitHub'
-        Icon={<FaGithub />}
+        Path='#projects'
+        Text='View my projects'
       />
-      <LinkButton Path='#contact' Text='Contact me' />
+      <LinkButton
+        Path='#contact'
+        Text='Contact me'
+        Style='bg-portfolio-primary! hover:bg-portfolio-secondary! text-kv-white! border-portfolio-tertiary! hover:border-portfolio-accent!'
+      />
     </div>
   </section>
   )

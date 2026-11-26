@@ -102,6 +102,7 @@ export function ContributionGrid({ weeks }: { weeks: Week[] }) {
   }
 
   // TODO: Clean up divs where possible for simpler and/or more semantic structure.
+  // TODO: Get rid of the buttons!
   return (
     <div ref={containerRef} className='relative order-1 mb-2'>
       <div className='overflow-x-auto'>

@@ -3,6 +3,7 @@ export function Accessibility() {
    * Notes:
    * - Add direct examples of accessible features.
    * - Is it rude to add examples of common inaccessible patterns that look cool?
+   * - Rewrite the story and make sure that i don't imply that the use of screen readers in general is exhausting, just while using inaccessible sites.
    */
   return (
     <article
@@ -10,8 +11,6 @@ export function Accessibility() {
       className='
         flex flex-col gap-4 max-w-300
         mx-auto mb-8 px-8 pt-6 pb-8
-        bg-portfolio-primary rounded-lg
-        border border-portfolio-tertiary
       '
       aria-labelledby='accessibility-title'
     >

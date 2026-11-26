@@ -1,7 +1,7 @@
 // Styling
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
-import { Roboto } from 'next/font/google';
+import { Roboto, Roboto_Mono } from 'next/font/google';
 import '@/assets/global.css';
 import { ScreenSizeMarker } from '@/components/ScreenSizeMarker';
 import { ScrollToTop } from '@/components/navigation/ScrollToTop';
@@ -22,6 +22,12 @@ const roboto = Roboto({
   subsets: ['latin'],
 });
 
+const robotoMono = Roboto_Mono({
+  variable: '--font-roboto-mono',
+  weight: ['300', '400', '700'],
+  subsets: ['latin'],
+});
+
 export const metadata: Metadata = {
   title: {
     default: 'Sjursen\'s Portfolio',
@@ -36,7 +42,6 @@ export const metadata: Metadata = {
 import { Header } from '@/components/navigation/Header';
 import { Footer } from '@/components/navigation/Footer';
 
-// TODO: Add a "scroll to top" button
 // TODO: Ensure that there is more white space around sections
 // TODO: Ensure that links to sections can be clicked multiple times, and still work
 // TODO: Componentize more parts of the website.
@@ -56,7 +61,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang='en'
-      className={`${roboto.className} ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${roboto.className} ${robotoMono.variable} ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className='min-h-full flex flex-col bg-portfolio-secondary'>
         <Header />

@@ -40,6 +40,7 @@ export const projects: projectItem[] = [
     hasImage: false,
     hasGithub: false,
     hasCaseStudy: true,
-    caseStudyPath: '/example-project-case-study'
+    caseStudyPath: '/example-project-case-study',
+    featured: true
   }
 ];

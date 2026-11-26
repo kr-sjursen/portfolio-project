@@ -22,6 +22,10 @@
   --color-portfolio-accent-dark: var(--portfolio-accent-dark);
 }
 
+html {
+  scroll-padding-top: 3rem;
+}
+
 body {
   min-height: 100svh;
   display: flex;

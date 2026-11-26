@@ -50,7 +50,10 @@ export function ScrollToTop() {
 
   // TODO: Add animation on appear and disappear
   return (
-    <div className='fixed right-4 z-99' style={{ bottom }}>
+    <div
+      className='fixed right-6 sm:right-4 z-99'
+      style={{ bottom: `max(1.5rem, ${bottom}px)` }}
+    >
       <button
         onClick={scrollToTop}
         title='Scroll to top'
@@ -58,12 +61,12 @@ export function ScrollToTop() {
           flex flex-row justify-center items-center p-2
           bg-portfolio-accent-dark
           text-black text-base
-          border border-portfolio-primary
+          border-2 border-portfolio-accent-dark
           hover:bg-portfolio-accent
           focus:bg-portfolio-accent
           focus:outline-2 focus:outline-portfolio-accent-dark
           focus:-outline-offset-2
-          rounded-full! w-18 h-18
+          rounded-full! w-14 h-14 sm:w-18 sm:h-18
         '
       >
         <LuArrowUp

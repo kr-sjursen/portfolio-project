@@ -14,7 +14,9 @@ type Week = {
 };
 
 export function ContributionGrid({ weeks }: { weeks: Week[] }) {
-  const days = weeks.flatMap((week) => week.contributionDays);
+  const [weekLimit, setWeekLimit] = useState(24);
+  const visibleWeeks = weeks.slice(-weekLimit);
+  const days = visibleWeeks.flatMap((week) => week.contributionDays);
   const buttons = useRef<(HTMLButtonElement | null)[]>([]);
   const tooltipRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -101,13 +103,28 @@ export function ContributionGrid({ weeks }: { weeks: Week[] }) {
     }
   }
 
+  useEffect(() => {
+  const media = window.matchMedia('(max-width: 639px)');
+
+  function updateWeekLimit() {
+    setWeekLimit(media.matches ? 16 : 24);
+    setCursor(0);
+    setHovered(null);
+    setFocused(null);
+  }
+
+  updateWeekLimit();
+    media.addEventListener('change', updateWeekLimit);
+    return () => media.removeEventListener('change', updateWeekLimit);
+  }, []);
+
   // TODO: Clean up divs where possible for simpler and/or more semantic structure.
   // TODO: Get rid of the buttons!
   return (
     <div ref={containerRef} className='relative order-1 mb-2'>
       <div className='overflow-x-auto'>
         <div className='flex w-max gap-1' aria-label='Daily GitHub contributions'>
-          {weeks.map((week) => (
+          {visibleWeeks.map((week) => (
             <div key={week.contributionDays[0].date} className='grid grid-rows-7 gap-1'>
               {week.contributionDays.map((day) => {
                 const index = days.findIndex((item) => item.date === day.date);

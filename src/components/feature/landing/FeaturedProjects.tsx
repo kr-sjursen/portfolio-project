@@ -7,6 +7,7 @@ export function FeaturedProjects() {
   /**
    * Notes:
    * - Consider a "load more projects" button at the end?
+   * - Choose how many to show on initial load based on screen size
    */
   return (
     <section
@@ -44,12 +45,12 @@ export function FeaturedProjects() {
             </p>
           </section>
         )}
-        {projects.length > 0 && (
+        {projects.length > 0 &&  (
           <ul className='
             flex flex-row flex-wrap lg:flex-nowrap justify-around gap-4
             content-stretch
           '>
-            {projects.map((project, index) => (
+            {projects.filter(p => p.featured).map((project, index) => (
               <ProjectCard
                 key={index}
                 Title={project.title}
@@ -68,7 +69,7 @@ export function FeaturedProjects() {
           Path='https://github.com/kr-sjursen'
           Text='My GitHub'
           Icon={<FaGithub />}
-          Style='w-[300px]'
+          Style='max-w-[300px]'
           IsExternal
         />
       </div>

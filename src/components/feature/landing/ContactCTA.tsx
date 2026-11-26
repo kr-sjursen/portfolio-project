@@ -56,9 +56,9 @@ export function ContactCTA() {
         </p>
         <p>I can be reached via email or LinkedIn, feel free to connect anytime.</p>
       </div>
-      <div className='flex flex-row gap-4'>
+      <div className='flex flex-col md:flex-row flex-wrap lg:flex-nowrap gap-4'>
         <ul
-          className='flex flex-col gap-4'
+          className='flex flex-col md:flex-row *:flex-1 lg:flex-col gap-4'
           aria-label='Contact info'
         >
           {contactInfo.map(info => (

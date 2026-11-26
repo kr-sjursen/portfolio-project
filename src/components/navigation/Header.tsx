@@ -1,13 +1,15 @@
+'use client';
+
 import Link from 'next/link';
+import { useState } from 'react';
+import { LuMenu, LuX } from 'react-icons/lu';
 import { Logo } from '@/components/Logo';
 // import { ThemeSelect } from '@/components/navigation/ThemeSelect';
 
 export function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const links = [
-    {
-      href: '/',
-      label: 'My Portfolio',
-    },
     {
       href: '#about',
       label: 'About',
@@ -27,10 +29,11 @@ export function Header() {
   ];
 
   // TODO: Fix header covering the top of content when jumping to sections
+  // TODO: Style mobile menu
   return (
     <header className='
-      flex flex-row w-full top-0 p-2 py-3 mb-2 bg-portfolio-primary
-      text-kv-white text-lg px-4 pr-8 shadow-md shadow-portfolio-primary/50
+      flex flex-row w-full top-0 px-4 sm:pr-8 bg-portfolio-primary
+      text-kv-white text-lg shadow-md shadow-portfolio-primary/50
       sticky z-98 border-b border-portfolio-tertiary
     '>
       <Link
@@ -43,30 +46,97 @@ export function Header() {
       >
         Skip to content
       </Link>
-      <nav className='grow'>
-        <ul className='flex space-x-4 gap-2'>
-          <li className='
-            hover:underline hover:underline-offset-2
-            hover:decoration-portfolio-accent
-            mr-1
-          '>
-            <Logo />
-          </li>
+      <nav className='flex grow flex-wrap items-center gap-2 my-1 sm:my-3 sm:flex-nowrap'>
+        <div className='group flex flex-row gap-2'>
+          <Logo className='group-hover:text-portfolio-accent' />
+          <Link
+            href='/'
+            onClick={() => setMenuOpen(false)}
+            className='
+              hover:underline hover:underline-offset-3
+              hover:decoration-portfolio-accent
+            '
+          >
+            My Portfolio
+          </Link>
+        </div>
+
+        <button
+          type='button'
+          className='
+            ml-auto flex h-11 w-11 items-center justify-center sm:hidden
+            hover:text-portfolio-accent
+          '
+          title={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-label={menuOpen ? 'Close navigation' : 'Open navigation'}
+          aria-expanded={menuOpen}
+          aria-controls='primary-navigation'
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          {menuOpen
+            ? <LuX
+              className='h-6 w-6'
+              aria-hidden='true'
+            />
+            : <LuMenu
+              className='h-6 w-6'
+              aria-hidden='true'
+            />
+          }
+        </button>
+
+        <ul
+          id='primary-navigation'
+          className={`
+            absolute left-0 top-full w-full flex-col gap-0 justify-end text-center
+            bg-portfolio-primary
+            border-y border-portfolio-tertiary sm:border-none
+            sm:static sm:flex sm:w-auto sm:grow sm:flex-row sm:gap-6
+            ${menuOpen ? 'flex' : 'hidden'}
+          `}
+        >
           {links.map(({ href, label }) => (
             <li
               key={href}
-              className='
-                hover:underline hover:underline-offset-2
-                hover:decoration-portfolio-accent
-                nth-2:grow
-              '
+              className={`
+                group px-4 py-2
+                not-first:border-t border-portfolio-tertiary
+                hover:bg-portfolio-tertiary sm:hover:bg-transparent
+                sm:border-none sm:p-0
+                ${href === '/' ? 'sm:grow' : ''}
+              `}
             >
-              <Link href={href}>{label}</Link>
+              <Link
+                href={href}
+                className='
+                  group-hover:underline group-hover:underline-offset-2
+                  group-hover:decoration-portfolio-accent
+                '
+                //onClick={() => setMenuOpen(false)}
+                onClick={(event) => {
+                  if (
+                    event.defaultPrevented ||
+                    event.button !== 0 ||
+                    event.metaKey || event.ctrlKey || event.shiftKey || event.altKey
+                  ) return;
+
+                  setMenuOpen(false);
+
+                  if (window.location.hash === href) {
+                    const target = document.getElementById(href.slice(1));
+                    if (target) {
+                      event.preventDefault();
+                      target.scrollIntoView();
+                    }
+                  }
+                }}
+              >
+                {label}
+              </Link>
             </li>
           ))}
         </ul>
       </nav>
-      {/* <ThemeSelect /> */}
     </header>
   );
 }

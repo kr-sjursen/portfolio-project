@@ -11,6 +11,7 @@ export default function Home() {
   // TODO: Add a small featured-projects section.
   // TODO: Include one prominent contact or "let's talk" link.
   // TODO: Consider adding a playground page for small experimental stuff.
+  // TODO: Move the graph to a separate section (currently just there for testing)
   return (
     <main
       id='main'

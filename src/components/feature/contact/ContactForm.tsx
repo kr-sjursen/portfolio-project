@@ -50,7 +50,7 @@ export function ContactForm() {
       action='/' // TODO: set correct endpoint
       id='contact-form'
       className='
-        flex flex-col wrap gap-x-2 gap-y-4 px-6 py-4 justify-center
+        flex flex-col wrap gap-x-2 gap-y-4 px-6 py-4 justify-center w-full
         bg-portfolio-secondary
         border border-portfolio-tertiary rounded-xl
         text-sm
@@ -67,15 +67,15 @@ export function ContactForm() {
       >
         Contact Me
       </h3>
-      <div className='flex flex-row flex-wrap gap-x-4 gap-y-4'>
+      <div className='flex flex-col sm:flex-row flex-wrap gap-x-4 gap-y-4'>
         {data.map(d => (
           <div
             key={d.id}
-            className='flex flex-col gap-1 w-[calc(50%-0.5rem)]'
+            className='flex flex-col gap-1 sm:w-[calc(50%-0.5rem)]'
           >
             <label
               htmlFor={d.id}
-              className='w-full'
+              className='w-fit'
             >
               {d.label}{d.required ? required : ''}
             </label>

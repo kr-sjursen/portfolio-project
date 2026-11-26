@@ -35,7 +35,7 @@ export function ProjectCard({
         <h3 className='text-2xl'>{Title}</h3>
         <p className='grow'>{Description}</p>
         {Tech &&
-          <ul className='flex flex-row gap-2 mb-2'>
+          <ul className='flex flex-row flex-wrap gap-2 mb-2'>
             {Tech.map(t =>
               <li
                 key={t}

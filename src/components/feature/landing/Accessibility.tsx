@@ -17,7 +17,7 @@ export function Accessibility() {
       <div className='flex flex-col gap-2'>
         <h2
           id='accessibility-title'
-          className='text-3xl'
+          className='text-3xl text-center'
         >
           Why accessibility?
         </h2>

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 type CommonProps = {
-  Text?: string;
+  Text: string;
   Icon?: React.ReactNode;
   Style?: string;
 };
@@ -23,6 +23,7 @@ type ButtonProps = CommonProps & {
  * - <Link> is used for internal links.
  * - <a> is used for external links.
  * - IsButton determines if it's a button or link.
+ * TODO: Split into separate Link and Button components for clarity and maintainability.
  */
 export function LinkButton(props: LinkProps | ButtonProps) {
   const { Text, Icon, Style } = props;

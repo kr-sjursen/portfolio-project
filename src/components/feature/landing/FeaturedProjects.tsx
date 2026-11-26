@@ -63,13 +63,13 @@ export function FeaturedProjects() {
             ))}
           </ul>
         )}
-      <div className='flex flex-col gap-2'>
-        <p>Find more of my projects on my GitHub:</p>
+      <div className='flex flex-col items-center gap-4'>
+        <p>Find more of my projects on GitHub:</p>
         <LinkButton
           Path='https://github.com/kr-sjursen'
-          Text='My GitHub'
+          Text='My GitHub profile'
           Icon={<FaGithub />}
-          Style='max-w-[300px]'
+          Style='w-fit'
           IsExternal
         />
       </div>

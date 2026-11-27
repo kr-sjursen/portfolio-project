@@ -40,7 +40,8 @@ export function Hero() {
     <div className='flex flex-col sm:flex-row gap-4'>
       <LinkButton
         Path='#projects'
-        Text='View my projects'
+        Text='View my projects' 
+        Style='focus:outline-portfolio-secondary'
       />
       <LinkButton
         Path='#contact'

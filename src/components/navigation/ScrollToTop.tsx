@@ -3,9 +3,6 @@
 import { useEffect, useState } from 'react';
 import { LuArrowUp } from 'react-icons/lu';
 
-// TODO: Add smooth scroll effect
-// TODO: Hide button when at top of page
-// TODO: Add icon.
 // TODO: Ensure it is accessible
 
 export function ScrollToTop() {
@@ -48,7 +45,7 @@ export function ScrollToTop() {
 
   if (!isVisible) return null;
 
-  // TODO: Add animation on appear and disappear
+  // TODO: Add soft animation on appear and disappear
   return (
     <div
       className='fixed right-6 sm:right-4 z-99'

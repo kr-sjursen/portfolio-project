@@ -4,6 +4,7 @@ export function Accessibility() {
    * - Add direct examples of accessible features.
    * - Is it rude to add examples of common inaccessible patterns that look cool?
    * - Rewrite the story and make sure that i don't imply that the use of screen readers in general is exhausting, just while using inaccessible sites.
+   * - Consider answering what, why, who and so on.
    */
   return (
     <article
@@ -15,7 +16,7 @@ export function Accessibility() {
       aria-labelledby='accessibility-title'
     >
       <div className='flex flex-col gap-2'>
-        <h2
+        <h2 // Why
           id='accessibility-title'
           className='text-3xl text-center'
         >
@@ -31,7 +32,7 @@ export function Accessibility() {
         id='accessibility-improved'
         aria-labelledby='accessibility-improved-title'
       >
-        <h3
+        <h3 // How
           id='accessibility-improved-title'
           className='text-2xl'
         >
@@ -46,7 +47,7 @@ export function Accessibility() {
         id='accessibility-benefit'
         aria-labelledby='accessibility-benefit-title'
       >
-        <h3
+        <h3 // Who
           id='accessibility-benefit-title'
           className='text-2xl'
         >

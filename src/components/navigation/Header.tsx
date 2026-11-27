@@ -28,8 +28,10 @@ export function Header() {
     }
   ];
 
-  // TODO: Fix header covering the top of content when jumping to sections
   // TODO: Style mobile menu
+  // TODO: Implement focus trap for mobile menu
+  // TODO: Return focus to menu button on close
+  // TODO: Close menu on outside click
   return (
     <header className='flex flex-row w-full top-0 px-4 sm:pr-8 bg-portfolio-primary text-kv-white text-lg shadow-md shadow-portfolio-primary/50 sticky z-98 border-b border-portfolio-tertiary'>
       <Link
@@ -39,7 +41,7 @@ export function Header() {
         Skip to content
       </Link>
       <nav className='flex grow flex-wrap items-center gap-2 my-1 sm:my-3 sm:flex-nowrap'>
-        <div className='group flex flex-row gap-2'>
+        <div className='group flex flex-row gap-2 *:rounded-xs *:focus:outline-1 *:focus:outline-offset-3 *:focus:outline-portfolio-accent'>
           <Logo className='group-hover:text-portfolio-accent' />
           <Link
             href='/'
@@ -52,7 +54,7 @@ export function Header() {
 
         <button
           type='button'
-          className='ml-auto flex h-11 w-11 items-center justify-center sm:hidden hover:text-portfolio-accent'
+          className='ml-auto flex h-11 w-11 items-center justify-center sm:hidden hover:text-portfolio-accent rounded-xs focus:outline-1 focus:outline-offset-3 focus:outline-portfolio-accent'
           title={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
           aria-label={menuOpen ? 'Close navigation' : 'Open navigation'}
           aria-expanded={menuOpen}
@@ -88,13 +90,13 @@ export function Header() {
                 group px-4 py-2
                 not-first:border-t border-portfolio-tertiary
                 hover:bg-portfolio-tertiary sm:hover:bg-transparent
-                sm:border-none sm:p-0
+                sm:border-none sm:p-0 *:rounded-xs *:focus:outline-1 *:focus:outline-offset-3 *:focus:outline-portfolio-accent
                 ${href === '/' ? 'sm:grow' : ''}
               `}
             >
               <Link
                 href={href}
-                className='group-hover:underline group-hover:underline-offset-2 group-hover:decoration-portfolio-accent'
+                className='group-hover:underline group-hover:underline-offset-2 group-hover:decoration-portfolio-accent py-1 px-2'
                 //onClick={() => setMenuOpen(false)}
                 onClick={(event) => {
                   if (

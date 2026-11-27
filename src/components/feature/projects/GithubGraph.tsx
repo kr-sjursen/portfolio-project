@@ -4,7 +4,6 @@ import { cacheLife } from 'next/cache';
 import { ContributionGrid } from './ContributionGrid';
 
 // TODO: Clean up the file and maybe move Streak elsewhere
-// BUG: This component may fail the page if GitHub API is down, fallback needed.
 
 type ContributionDay = {
   date: string;

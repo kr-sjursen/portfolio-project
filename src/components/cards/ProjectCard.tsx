@@ -22,6 +22,7 @@ export function ProjectCard({
   ].filter((link): link is { href: string; text: string; isExternal: boolean } => !!link.href);
   // TODO: Make tech pill component
   // TODO: Use link button component
+  // TODO: Ensure that links are descriptive (e.g., not just 'View' and 'GitHub')
   return (
     <li
       id={id}

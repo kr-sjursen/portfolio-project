@@ -31,18 +31,10 @@ export function Header() {
   // TODO: Fix header covering the top of content when jumping to sections
   // TODO: Style mobile menu
   return (
-    <header className='
-      flex flex-row w-full top-0 px-4 sm:pr-8 bg-portfolio-primary
-      text-kv-white text-lg shadow-md shadow-portfolio-primary/50
-      sticky z-98 border-b border-portfolio-tertiary
-    '>
+    <header className='flex flex-row w-full top-0 px-4 sm:pr-8 bg-portfolio-primary text-kv-white text-lg shadow-md shadow-portfolio-primary/50 sticky z-98 border-b border-portfolio-tertiary'>
       <Link
         href='#main'
-        className='
-          absolute left-0 top-0 bg-portfolio-accent py-2 px-4 z-99
-          transform -translate-y-full focus:translate-y-0 transition
-          focus:bg-portfolio-accent focus:text-kv-black
-        '
+        className='absolute left-0 top-0 bg-portfolio-accent py-2 px-4 z-99 transform -translate-y-full focus:translate-y-0 transition focus:bg-portfolio-accent focus:text-kv-black'
       >
         Skip to content
       </Link>
@@ -52,10 +44,7 @@ export function Header() {
           <Link
             href='/'
             onClick={() => setMenuOpen(false)}
-            className='
-              hover:underline hover:underline-offset-3
-              hover:decoration-portfolio-accent
-            '
+            className='hover:underline hover:underline-offset-3 hover:decoration-portfolio-accent'
           >
             My Portfolio
           </Link>
@@ -63,10 +52,7 @@ export function Header() {
 
         <button
           type='button'
-          className='
-            ml-auto flex h-11 w-11 items-center justify-center sm:hidden
-            hover:text-portfolio-accent
-          '
+          className='ml-auto flex h-11 w-11 items-center justify-center sm:hidden hover:text-portfolio-accent'
           title={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
           aria-label={menuOpen ? 'Close navigation' : 'Open navigation'}
           aria-expanded={menuOpen}
@@ -108,10 +94,7 @@ export function Header() {
             >
               <Link
                 href={href}
-                className='
-                  group-hover:underline group-hover:underline-offset-2
-                  group-hover:decoration-portfolio-accent
-                '
+                className='group-hover:underline group-hover:underline-offset-2 group-hover:decoration-portfolio-accent'
                 //onClick={() => setMenuOpen(false)}
                 onClick={(event) => {
                   if (
